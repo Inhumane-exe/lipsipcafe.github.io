@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lip Sip Cafe</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #3e2723;
+}
+
+/* Navbar */
+nav {
+  background: #3e2723;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+nav a {
+  color: #ffcc00;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(62,39,35,0.8), rgba(62,39,35,0.8)),
+              url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+}
+
+.hero button {
+  background: #ffcc00;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Sections */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Menu */
+.menu-category {
+  margin-bottom: 40px;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  background: #f5f5f5;
+  margin: 10px;
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+}
+
+/* Contact */
+.contact input, .contact textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+}
+
+button {
+  background: #3e2723;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+
+/* Footer */
+footer {
+  background: #3e2723;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">☕ Lip Sip Cafe</div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <h1>Lip Sip Cafe</h1>
+  <p>Fresh Coffee • Delicious Bites • Cozy Vibes</p>
+  <button onclick="scrollToMenu()">Explore Menu</button>
+</section>
+
+<!-- MENU -->
+<section class="section" id="menu">
+  <h2>Our Menu</h2>
+
+  <!-- Coffee -->
+  <div class="menu-category">
+    <h3>☕ Coffee</h3>
+    <div class="menu-items">
+      <div class="item"><h4>Espresso</h4><p>₹120</p></div>
+      <div class="item"><h4>Cappuccino</h4><p>₹150</p></div>
+      <div class="item"><h4>Latte</h4><p>₹160</p></div>
+      <div class="item"><h4>Cold Coffee</h4><p>₹180</p></div>
+    </div>
+  </div>
+
+  <!-- Snacks -->
+  <div class="menu-category">
+    <h3>🥪 Snacks</h3>
+    <div class="menu-items">
+      <div class="item"><h4>Grilled Sandwich</h4><p>₹120</p></div>
+      <div class="item"><h4>Veg Burger</h4><p>₹130</p></div>
+      <div class="item"><h4>French Fries</h4><p>₹100</p></div>
+    </div>
+  </div>
+
+  <!-- Desserts -->
+  <div class="menu-category">
+    <h3>🍰 Desserts</h3>
+    <div class="menu-items">
+      <div class="item"><h4>Chocolate Cake</h4><p>₹150</p></div>
+      <div class="item"><h4>Brownie</h4><p>₹140</p></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Contact -->
+<section class="section contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Add your location here</p>
+  <p>📞 Add your phone number</p>
+
+  <form onsubmit="submitForm(event)">
+    <input type="text" placeholder="Your Name" required><br>
+    <input type="email" placeholder="Your Email" required><br>
+    <textarea placeholder="Your Message" required></textarea><br>
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="msg"></p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Lip Sip Cafe</p>
+</footer>
+
+<script>
+function scrollToMenu() {
+  document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  document.getElementById("msg").innerText = "Message sent! (Demo only)";
+}
+</script>
+
+</body>
+</html>
